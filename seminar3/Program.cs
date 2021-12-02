@@ -78,7 +78,7 @@ for( int i = 0; i < first.Length; i++){
 Console.WriteLine(min + "\n" + max); */
 
 // Task 7
-bool check(int[] array){
+/* bool check(int[] array){
     int sum_left = 0;
     int sum_right = 0;
     for(int i = 0; i < array.Length; i++){
@@ -97,3 +97,24 @@ bool check(int[] array){
 int[] arr = {1, 2, 3, 6};
 bool rez = check(arr);
 Console.WriteLine(rez);
+ */
+
+// Our test
+bool check(int[] array){
+    int sum_left = 0;
+    int sum_right = 0;
+    int half = array.Length/2;
+    for(int i = 0; i < half; i++){
+        sum_left += array[i];
+    }
+    for(int i = half; i < array.Length; i++){
+        sum_right += array[i];
+    }
+    if(sum_left == sum_right){
+        return true;
+    }
+    return false;
+}
+
+int[] array = {1, 2, 3, 0};
+Console.Write(check(array));
